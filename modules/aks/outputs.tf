@@ -1,7 +1,7 @@
-module "aks" {
-  source     = "../../modules/aks"
-  name       = "aks-dev"
-  location   = "eastus2"
-  node_count = 1
-  vm_size    = "Standard_B2s"
+output "cluster_name" {
+  value = azurerm_kubernetes_cluster.this.name
+}
+
+output "resource_group_name" {
+  value = azurerm_resource_group.this.name
 }
