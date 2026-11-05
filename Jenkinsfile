@@ -53,6 +53,16 @@ pipeline {
         }
       }
     }
+
+    stage('Deploy K8s') {
+      steps {
+        withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+          sh 'kubectl get nodes'
+          sh 'kubectl apply -f k8s/'
+          sh 'kubectl get pods'
+        }
+      }
+    }
   }
 
   post {
