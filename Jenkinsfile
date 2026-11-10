@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   parameters {
-    choice(name: 'ENV', choices: ['dev'], description: 'Ambiente')
+    choice(name: 'ENV', choices: ['azure-dev']: 'Ambiente')
   }
 
   environment {
